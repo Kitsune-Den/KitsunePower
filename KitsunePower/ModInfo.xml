@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <Name value="KitsunePower" />
+    <DisplayName value="Kitsune Power" />
+    <Version value="1.0.0.0" />
+    <Description value="Retunes and themes the vanilla power chain: Solar and Generator Banks feed a Battery Bank built around quality-6 car batteries. Solar pulls more by day, generators burn fuel twice as efficiently, batteries charge in half the time. Server-side only, pure XML, EAC-safe." />
+    <Author value="AdaInTheLab" />
+    <Website value="https://github.com/Kitsune-Den/KitsunePower" />
+</xml>

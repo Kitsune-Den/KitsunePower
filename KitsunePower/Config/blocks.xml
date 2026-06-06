@@ -1,0 +1,75 @@
+<config>
+
+	<!--
+		KitsunePower — Solar → Generator → Battery power chain
+		Pure-XML retune of the vanilla power blocks. We do NOT add new blocks:
+		the engine power classes (SolarPanel / Generator / BatteryBank) are
+		hardcoded in Assembly-CSharp.dll, so we tune the vanilla blocks in
+		place and reskin them with kitsune flavor. Art (models/icons) stays on
+		the vanilla prefabs.
+
+		The chain (engine-accurate):
+		  Solar Bank   — clean daytime power source (slots solar cells)
+		  Generator Bank — gas-burning power source, anytime (slots engines)
+		      ...both feed downstream into...
+		  Battery Bank — the only block that STORES power, charging the
+		                 quality-6 car batteries you slot into it.
+
+		Note: a Generator is a power SOURCE, not a store — you can't literally
+		"charge" it. Solar + Generator are your two sources; the Battery Bank
+		is what fills up. Energy conversion stays honest 1:1 (no free power).
+	-->
+
+	<!-- ============================================================
+	     SOLAR BANK  (vanilla: solarbank, Class=SolarPanel)
+	     Slots solar cells, makes power from sunlight. Clean, free, daytime.
+	     ============================================================ -->
+
+	<!-- More output per solar cell: 30 -> 45. Tops batteries faster by day. -->
+	<set xpath="/blocks/block[@name='solarbank']/property[@name='OutputPerStack']/@value">45</set>
+
+	<!-- Higher array ceiling: 180 -> 270. -->
+	<set xpath="/blocks/block[@name='solarbank']/property[@name='MaxPower']/@value">270</set>
+
+	<!-- Custom description key (text in Localization.txt). -->
+	<set xpath="/blocks/block[@name='solarbank']/property[@name='DescriptionKey']/@value">kitsuneSolarBankDesc</set>
+
+
+	<!-- ============================================================
+	     GENERATOR BANK  (vanilla: generatorbank, Class=Generator)
+	     Slots small engines, burns gas. Anytime power source / backup.
+	     ============================================================ -->
+
+	<!-- Deeper gas tank: 1000 -> 2000. Fewer refuel trips on long runs. -->
+	<set xpath="/blocks/block[@name='generatorbank']/property[@name='MaxFuel']/@value">2000</set>
+
+	<!-- Burns gas twice as efficiently: 11250 -> 22500 output per fuel unit.
+	     Foxfire burns clean — same power, lasts twice as long per gas can. -->
+	<set xpath="/blocks/block[@name='generatorbank']/property[@name='OutputPerFuel']/@value">22500</set>
+
+	<!-- Custom description key (text in Localization.txt). -->
+	<set xpath="/blocks/block[@name='generatorbank']/property[@name='DescriptionKey']/@value">kitsuneGeneratorBankDesc</set>
+
+
+	<!-- ============================================================
+	     BATTERY BANK  (vanilla: batterybank, Class=BatteryBank)
+	     Slots car batteries (quality 1-6) and STORES power from the sources
+	     above. This is the heart of the chain — built around quality-6 cells.
+	     ============================================================ -->
+
+	<!-- Charges twice as fast: pulls 10 power/tick instead of 5.
+	     ChargePerInput stays 1 (1:1 conversion) so it's faster, not free. -->
+	<set xpath="/blocks/block[@name='batterybank']/property[@name='InputPerTick']/@value">10</set>
+
+	<!-- Rewards quality-6 car batteries: per-battery output ceiling 50 -> 75.
+	     Battery output scales with the cell's quality, so a full set of
+	     level-6 batteries now delivers a serious sustained load. -->
+	<set xpath="/blocks/block[@name='batterybank']/property[@name='OutputPerStack']/@value">75</set>
+
+	<!-- Higher total output ceiling: 400 -> 600. -->
+	<set xpath="/blocks/block[@name='batterybank']/property[@name='MaxPower']/@value">600</set>
+
+	<!-- Custom description key (text in Localization.txt). -->
+	<set xpath="/blocks/block[@name='batterybank']/property[@name='DescriptionKey']/@value">kitsuneBatteryBankDesc</set>
+
+</config>

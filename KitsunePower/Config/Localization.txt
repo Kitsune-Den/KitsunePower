@@ -1,0 +1,7 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
+solarbank,blocks,Block,,,Foxfire Solar Bank,,,,,,,,,,,,,,
+kitsuneSolarBankDesc,blocks,Block,,,A solar array tuned by kitsune hands. Each solar cell pulls more power from the sun to feed your battery bank by day. Clean and free — the first link in the chain. Needs solar cells to run.,,,,,,,,,,,,,,
+generatorbank,blocks,Block,,,Foxfire Generator Bank,,,,,,,,,,,,,,
+kitsuneGeneratorBankDesc,blocks,Block,,,A generator bank that burns engine fuel twice as efficiently and holds a deeper tank — your anytime power source when the sun is down. Feed its output into a Battery Bank. Needs small engines and gas to run.,,,,,,,,,,,,,,
+batterybank,blocks,Block,,,Spirit Battery Bank,,,,,,,,,,,,,,
+kitsuneBatteryBankDesc,blocks,Block,,,The heart of the chain. Drinks power from solar and generator banks twice as fast and stores it in car batteries — slot quality-6 cells for the highest sustained output. Charges fast, runs your whole base. Conversion stays honest: faster, not free.,,,,,,,,,,,,,,
