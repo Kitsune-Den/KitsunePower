@@ -82,3 +82,7 @@ The bottleneck in vanilla battery charging is `InputPerTick` (5) — the bank on
 ## Credits
 
 Made by AdaInTheLab.
+
+## License
+
+[CC BY-NC-SA 4.0](LICENSE), with an extra permission for servers that make money: see [NOTICE.md](NOTICE.md). In short: play it, change it and share it, with credit, not for sale, and with changed versions under the same license.
